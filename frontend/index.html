@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulseBrief | AI Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet"/>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'><polygon points='12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2'/></svg>" />
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="brand">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                        <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                        <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                        <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+                        <line x1="12" y1="2" x2="12" y2="8.5"></line>
+                    </svg>
+                    <h1>PulseBrief</h1>
+                </div>
+                <p class="subtitle">Real-time AI news synthesis engine.</p>
+                
+                <form id="summaryForm" class="search-form" autocomplete="off">
+                    <div class="input-wrap">
+                        <label for="topic" class="sr-only">Topic</label>
+                        <input id="topic" name="topic" type="text" maxlength="80" required
+                               placeholder="e.g., SpaceX, Global Markets..." />
+                        <div class="focus-ring"></div>
+                    </div>
+                    <button id="submitBtn" type="submit">
+                        <span class="btn-text">Generate Brief</span>
+                        <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </form>
+
+                <div id="loader" class="loader hidden" aria-live="polite">
+                    <div class="progress-bar"><div class="progress-fill"></div></div>
+                    <span class="loader-text">Aggregating sources...</span>
+                </div>
+                
+                <div id="errorBox" class="error-box hidden" role="alert"></div>
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="status-indicator">
+                    <span class="pulse"></span>
+                    <span>Systems Operational</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div id="emptyState" class="empty-state">
+                <div class="empty-graphics">
+                    <div class="grid-pattern"></div>
+                </div>
+                <h2>Awaiting Query</h2>
+                <p>Enter a topic in the command panel to generate a comprehensive intelligence brief.</p>
+            </div>
+
+            <div id="resultCard" class="results-wrapper hidden" aria-live="polite">
+                <header class="result-header">
+                    <div class="meta-row">
+                        <span class="badge">Intelligence Brief</span>
+                        <span class="meta-stat">Sources Analyzed: <strong id="articleCount">0</strong></span>
+                    </div>
+                    <h2 id="resultTopic">Topic Name</h2>
+                </header>
+
+                <div class="bento-grid">
+                    <section class="bento-box summary-box">
+                        <h3 class="box-title">Synthesis</h3>
+                        <p id="summaryText" class="summary-content"></p>
+                    </section>
+
+                    <section class="bento-box sources-box">
+                        <h3 class="box-title">Primary Sources</h3>
+                        <div id="sources" class="source-chips"></div>
+                    </section>
+                </div>
+
+                <section class="articles-section">
+                    <h3 class="section-title">Reference Timeline</h3>
+                    <div id="articleList" class="articles-list"></div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
