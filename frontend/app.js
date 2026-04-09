@@ -2,7 +2,7 @@
 const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || window.location.protocol === "file:";
 const BACKEND_BASE_URL = isLocal
     ? "http://localhost:8080"
-    : "https://your-backend-app.onrender.com"; // UPDATE ME AFTER DEPLOYING BACKEND
+    : "https://pulsebrief-csrj.onrender.com";
 
 const summaryForm = document.getElementById("summaryForm");
 const topicInput = document.getElementById("topic");
