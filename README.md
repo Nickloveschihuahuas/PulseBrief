@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="docs/images/hero-banner.png" alt="PulseBrief — AI-Powered News Intelligence Engine" width="800" />
-
 # PulseBrief
 
 **Real-time AI news synthesis engine powered by Google Gemini and NewsAPI**
@@ -12,7 +10,7 @@
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-MIT-A855F7?style=flat-square)](LICENSE)
 
-[Live Demo](https://pulsebrief-csrj.onrender.com) · [API Reference](#api-reference) · [Architecture](#architecture) · [Quick Start](#quick-start)
+[Live Demo](https://pulse-brief.vercel.app) · [API Reference](#api-reference) · [Architecture](#architecture) · [Quick Start](#quick-start)
 
 </div>
 
@@ -23,9 +21,13 @@
 PulseBrief is a production-ready news aggregation and AI summarization service. Enter any topic — the backend fetches the latest articles from NewsAPI, feeds them through **Google Gemini 2.5 Flash** for intelligent synthesis, and returns a structured intelligence brief with source attribution and a reference timeline.
 
 <div align="center">
-<img src="docs/images/ui-preview.png" alt="PulseBrief UI — Intelligence Brief for Artificial Intelligence" width="720" />
+<img src="docs/images/demo-empty.png" alt="PulseBrief — Awaiting Query" width="720" />
 <br/>
-<sub><b>Fig 1.</b> Intelligence brief generated for "Artificial Intelligence" — bento-grid layout with synthesis, source chips, and reference timeline.</sub>
+<sub><b>Fig 1.</b> Command panel — enter any topic to generate an intelligence brief.</sub>
+<br/><br/>
+<img src="docs/images/demo-results.png" alt="PulseBrief — Intelligence Brief Results" width="720" />
+<br/>
+<sub><b>Fig 2.</b> Generated brief for "Artificial Intelligence" — synthesis, source chips, and reference timeline.</sub>
 </div>
 
 ---
@@ -46,9 +48,7 @@ PulseBrief is a production-ready news aggregation and AI summarization service. 
 
 ## Architecture
 
-<div align="center">
-<img src="docs/images/architecture.png" alt="PulseBrief System Architecture" width="680" />
-</div>
+
 
 ### Request Flow
 
